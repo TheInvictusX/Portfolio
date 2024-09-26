@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Project: Customer Churn Prediction</title>
+    <link rel="stylesheet" href="project-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="glow-text">Customer Churn Prediction</h1>
+            <p class="subtitle">A Machine Learning Approach to Predict Customer Attrition</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#data">Data</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="overview">
+                <h2>Project Overview</h2>
+                <p>This project aims to predict customer churn for a telecommunications company using machine learning techniques. By identifying customers at risk of leaving, the company can take proactive measures to retain them.</p>
+            </section>
+            <section id="data">
+                <h2>Data Description</h2>
+                <p>The dataset contains information about:</p>
+                <ul>
+                    <li>Customer demographics (age, gender, etc.)</li>
+                    <li>Account information (contract type, payment method, etc.)</li>
+                    <li>Services used (phone, internet, streaming, etc.)</li>
+                    <li>Usage patterns (monthly charges, total charges, etc.)</li>
+                </ul>
+                <div class="code-block">
+                    <pre><code>
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('telco_customer_churn.csv')
+
+# Display basic information
+print(df.info())
+                    </code></pre>
+                </div>
+            </section>
+            <section id="methodology">
+                <h2>Methodology</h2>
+                <ol>
+                    <li>Data Preprocessing
+                        <ul>
+                            <li>Handling missing values</li>
+                            <li>Encoding categorical variables</li>
+                            <li>Feature scaling</li>
+                        </ul>
+                    </li>
+                    <li>Exploratory Data Analysis
+                        <ul>
+                            <li>Visualizing feature distributions</li>
+                            <li>Correlation analysis</li>
+                        </ul>
+                    </li>
+                    <li>Feature Selection
+                        <ul>
+                            <li>Using feature importance from Random Forest</li>
+                        </ul>
+                    </li>
+                    <li>Model Training and Evaluation
+                        <ul>
+                            <li>Logistic Regression</li>
+                            <li>Random Forest</li>
+                            <li>XGBoost</li>
+                        </ul>
+                    </li>
+                    <li>Hyperparameter Tuning
+                        <ul>
+                            <li>Grid Search with Cross-Validation</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
+            <section id="results">
+                <h2>Results</h2>
+                <p>After evaluating multiple models, XGBoost performed the best with the following metrics:</p>
+                <ul>
+                    <li>Accuracy: 0.85</li>
+                    <li>Precision: 0.83</li>
+                    <li>Recall: 0.79</li>
+                    <li>F1-Score: 0.81</li>
+                </ul>
+                <div class="chart-container">
+                    <img src="/api/placeholder/600/400" alt="Feature Importance Chart" />
+                </div>
+            </section>
+            <section id="conclusion">
+                <h2>Conclusion</h2>
+                <p>The XGBoost model successfully predicts customer churn with high accuracy. Key factors influencing churn include:</p>
+                <ul>
+                    <li>Contract type (month-to-month customers are more likely to churn)</li>
+                    <li>Tenure (newer customers are at higher risk)</li>
+                    <li>Total charges (higher charges correlate with increased churn risk)</li>
+                </ul>
+                <p>Recommendations for reducing churn:</p>
+                <ul>
+                    <li>Offer incentives for longer-term contracts</li>
+                    <li>Provide special attention and offers to new customers</li>
+                    <li>Review pricing strategies for high-value customers</li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Data Science Portfolio. All rights reserved.</p>
+            <a href="index.html" class="neon-button">Back to Portfolio</a>
+        </footer>
+    </div>
+    <script src="project-script.js"></script>
+</body>
+</html>
